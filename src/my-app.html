@@ -70,6 +70,11 @@
         color: #33691e;
         font-weight: bold;
       }
+
+      iron-pages {
+        max-width: 900px;
+        margin: 0px auto;
+      }
     </style>
 
     <app-location route="{{route}}" use-hash-as-path></app-location>
@@ -80,14 +85,14 @@
         tail="{{subroute}}"></app-route>
 
     <app-header-layout>
-      <app-header slot="header">
+      <app-header slot="header" reveals$="[[isNarrow]]" fixed$="[[!isNarrow]]">
         <app-toolbar>
           <paper-icon-button icon="my-icons:menu" on-tap="_toggleDrawer"></paper-icon-button>
           <div main-title>Justin Huang</div>
         </app-toolbar>
       </app-header>
 
-      <app-drawer-layout fullbleed id="drawerLayout">
+      <app-drawer-layout fullbleed narrow="{{isNarrow}}" id="drawerLayout">
         <!-- Drawer content -->
         <app-drawer id="drawer" slot="drawer">
           <iron-selector selected="[[page]]" attr-for-selected="name" class="drawer-list" role="navigation">
