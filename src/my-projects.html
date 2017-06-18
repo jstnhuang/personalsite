@@ -1,4 +1,5 @@
 <link rel="import" href="../bower_components/polymer/polymer-element.html">
+<link rel="import" href="image-thumbnail.html">
 <link rel="import" href="shared-styles.html">
 
 <dom-module id="my-projects">
@@ -11,10 +12,164 @@
     </style>
 
     <div class="card">
-      <div class="circle">1</div>
-      <h1>View One</h1>
-      <p>Ut labores minimum atomorum pro. Laudem tibique ut has.</p>
-      <p>Lorem ipsum dolor sit amet, per in nusquam nominavi periculis, sit elit oportere ea.Lorem ipsum dolor sit amet, per in nusquam nominavi periculis, sit elit oportere ea.Cu mei vide viris gloriatur, at populo eripuit sit.</p>
+      <h1>Year of Code3</h1>
+      <p>
+        2016 was a busy year!
+        The highlight of it was building the <em>Code3</em> system, which allows users to easily program mobile manipulators like the PR2.
+      </p>
+      <p>
+        <strong>Infrastructure:</strong>
+        Early in the year, I developed infrastructure that later supported a variety of projects.
+        I built an open-source version of <em>CustomPrograms</em> called <em><a href="https://github.com/hcrlab/code_it">CodeIt</a></em>.
+        I also updated <a href="https://github.com/hcrlab/rws">RWS</a> to be easier to set up.
+        Finally, I wrote a new <a href="https://github.com/jstnhuang/rapid">codebase</a> for controlling the PR2 robot and implemented CodeIt for the <a href="https://github.com/hcrlab/code_it_pr2">PR2</a> and the <a href="https://github.com/hcrlab/code_it_turtlebot">Turtlebot</a>.
+        This allowed users to program the PR2 to look around and do simple pick and place actions just by logging into a website and writing a little bit of code.
+        Another lab member used all of this infrastructure to lead a week-long workshop in which a group of disabled students learned to program the Turtlebot.
+        He also wrote a paper about the experience, which was accepted to SIGCSE 2017.
+      <p>
+      <p>
+        <strong>CustomLandmarks:</strong>
+        In the spring and summer quarters, I built a 3D object detection system called <em>CustomLandmarks</em>.
+        This system allows users to specify a perceptual landmark (an object or a unique part of the scene) that the robot can detect later.
+        To do this, they simply draw a box around a point cloud from the robot's RGBD sensor, such as a Kinect.
+        I wrote about the system and characterized its performance in a submission to ICRA 2017 that is currently under review.
+      </p>
+      <p>
+        <strong>CustomActions and Code3:</strong>
+        I applied <em>CustomLandmarks</em> to our lab's programming by demonstration system, allowing users to demonstrate actions relative to arbitrary landmarks.
+        Previously, programming by demonstration actions could only be demonstrated relative to a clearly segmented tabletop object.
+        We named the modified system <em>CustomActions</em>.
+        The combination of <em>CustomPrograms</em>, <em>CustomLandmarks</em>, and <em>CustomActions</em> makes it easy for users to program robot actions that require both perceptual and manipulation capabilities.
+        We named the combination of these three components <em>Code3</em> and conducted a user study of its usability.
+        I wrote about the system design and user study results in a paper that was accepted to HRI 2017.
+      </p> 
+      <p>
+        <strong>General exam:</strong>
+        In November 2016, I passed my general exam!
+        For my <a href="https://drive.google.com/open?id=0B77PnOCaAq8sRktfRnFSek1ET1k">general exam report</a> and presentation, I summarized the ICRA and HRI papers described above.
+      </p>
+      <image-thumbnail src="images/generalexam.png" href="https://drive.google.com/open?id=0B77PnOCaAq8sRktfRnFSek1ET1k" title="My general exam report."></image-thumbnail>
+      <image-thumbnail src="images/weboverview.png" href="https://www.youtube.com/watch?v=1tQyxeIwcEs" title="An overview of various infrastructure projects developed in 2016."></image-thumbnail>
+      <image-thumbnail src="images/customlandmarks.png" href="https://www.youtube.com/watch?v=ZQSNsm-RW1I" title="Video about CustomLandmarks"></image-thumbnail>
+      <image-thumbnail src="images/customactions.png" href="https://www.youtube.com/watch?v=hIOfWiZ_0gU" title="Video about CustomActions"></image-thumbnail>
+      <image-thumbnail src="images/codeit.png" href="https://www.youtube.com/watch?v=_fPp_yB2vSw" title="Video about CodeIt"></image-thumbnail>
+      <image-thumbnail src="images/crayons.png" href="https://www.youtube.com/watch?v=boxN_DQPwGg" title="Video showing a Code3 program where the robot reconfigures an object with a tool and grasps it."></image-thumbnail>
+      <image-thumbnail src="images/tictactoe.png" href="https://www.youtube.com/watch?v=xilG4MMII94" title="Video showing a Code3 program to play tic-tac-toe against a human opponent."></image-thumbnail>
+      <image-thumbnail src="images/doit2016.png" href="https://www.youtube.com/watch?v=hInaiL2fY1Y&feature=youtu.be" title="Video about a programming workshop that used my software to teach students to program a robot."></image-thumbnail>
+    </div>
+
+    <div class="card">
+      <h1>Savioke internship</h1>
+      <p>
+        From June - Dec 2015, I interned at <a href="http://www.savioke.com/">Savioke</a>, a service robotics company.
+        For my first project, I designed and built <em>CustomPrograms</em>, a web-based system for programming behaviors on the Savioke Relay robot (screenshots below).
+        It allows designers, technicians, and other non-software engineer users to rapidly experiment with new use cases for the robot, using a drag and drop interface (screenshots below).
+        We wrote about the system and published a paper with our findings, <a href="https://drive.google.com/file/d/0B77PnOCaAq8seFE2UFl6ZHBzZVk/view?usp=sharing">Design and Evaluation of a Rapid Programming System for Service Robots</a>, which was accepted to HRI 2016.
+        <em>CustomPrograms</em> was, and continues to be used for sales demos, trade shows, and internal testing.
+        It is also being used by outside researchers who are conducting a study related to elder care.
+      </p>
+      <p>
+        My second project was to build a system for visual global localization of the Relay robot.
+        In occasional cases where Monte-Carlo localization (MCL) with a laser scanner fails, a typical strategy for global localization, distributing particles randomly, often fails.
+        In our system, the robot saved camera images from previous deliveries to a database.
+        The images were represented using features from a pre-trained convolutional neural network.
+        At runtime, the robot searched for similar-looking images and seeded MCL based on the results.
+        The database managed itself to keep data fresh and to limit its size of disk by the area of the map, rather than the amount of data collected.
+        We showed that out of 10 scenarios where MCL global localization failed, our system could correctly globally localize itself 7 out of 10 times, or 9 out of 10 times with a larger dataset.
+        The system was implemented in C++ using OpenCV, Caffe, and ROS.
+        With GPU support, the system ran in real-time with approximately 5 ms per image lookup.
+      </p>
+      <image-thumbnail src="images/huangblockly2016.png" href="https://drive.google.com/file/d/0B77PnOCaAq8seFE2UFl6ZHBzZVk/view?usp=sharing"></image-thumbnail>
+      <image-thumbnail src="images/blockly_intro.png"></image-thumbnail>
+      <image-thumbnail src="images/blockly_screenshot.png"></image-thumbnail>
+      <image-thumbnail src="images/global_localization_examples.png"></image-thumbnail>
+      <image-thumbnail src="images/global_mcl.png" href="https://www.youtube.com/watch?v=C1mE0OLyOkc"></image-thumbnail>
+      <image-thumbnail src="images/global_cnn.png" href="https://www.youtube.com/watch?v=F5m5C9ng39A"></image-thumbnail>
+    </div>
+
+    <div class="card">
+      <h1>Amazon Picking Challenge</h1>
+      <p>
+        During Spring 2015, I worked on the Amazon Picking Challenge along with other members of the lab. We used a PR2 robot.
+      </p>
+      <p>
+        I worked on several components of the challenge:
+        <ul>
+          <li><strong>Overall framework:</strong> state machine, visualization, error handling, transform publishers</li>
+          <li><strong>High-level planning:</strong> which bins to pick and in which order</li>
+          <li><strong>Abstractions for primitive services:</strong> driving, moving the arm using inverse kinematics, controlling the grippers</li>
+          <li><strong>Integrations:</strong> working with other labs to integrate shelf localization and an optical fingertip sensor</li>
+          <li><strong>Object recognition pipeline:</strong> fitting bounding boxes to objects, segmenting objects in clutter, recognizing objects.</li>
+          <li><strong>Verifying grasps:</strong> based on gripper position, fingertip sensor, and visual inspection</li>
+        </ul>
+      </p>
+      <p>For my computer vision class, I made a <a href="https://docs.google.com/presentation/d/1NZhQ189nF481WVpzGFeko2Knys83eDsmiYhg6d-CaU4/edit?usp=sharing">poster</a> and wrote a <a href="https://drive.google.com/file/d/0B77PnOCaAq8sVmNpTVZfdHBtaDA/view?usp=sharing">short paper</a> about the object recognition pipeline.</p>
+      <image-thumbnail src="images/pick_poster.png" href="https://docs.google.com/presentation/d/1NZhQ189nF481WVpzGFeko2Knys83eDsmiYhg6d-CaU4/edit?usp=sharing"></image-thumbnail>
+      <image-thumbnail src="images/pick_paper.png" href="https://drive.google.com/file/d/0B77PnOCaAq8sVmNpTVZfdHBtaDA/view?usp=sharing"></image-thumbnail>
+      <image-thumbnail src="images/pick_recog1.png"></image-thumbnail>
+      <image-thumbnail src="images/pick_recog2.png"></image-thumbnail>
+      <image-thumbnail src="images/pick_recog3.png"></image-thumbnail>
+      <image-thumbnail src="images/pick1.png"></image-thumbnail>
+    </div>
+
+    <div class="card">
+      <h1>Robot web server</h1>
+      <p>
+        In Autumn 2014, I started a project called <a href="https://github.com/hcrlab/rws">Robot Web Server</a> to make developing web apps on the PR2 as easy as possible.
+        Developers just need to supply an index.html as a frontend, and an app.launch which starts all necessary backend processes, and copy these files to a folder.
+        The app then appears in the app list on a website.
+        The web server starts automatically when the robot is booted and can be used to bring up the PR2.
+      </p>
+      <p>
+        I also made a mobile-friendly teleoperation app for the PR2.
+        My lab mates also used the framework to create a web dashboard for the PR2 and a navigation app.
+        Development of the web server and web apps for the robot is ongoing.
+      </p>
+      <br />
+      <image-thumbnail src="images/rws_teleop.png"></image-thumbnail>
+      <image-thumbnail src="images/rws_mobile.png"></image-thumbnail>
+    </div>
+
+    <div class="card">
+      <h1>End-user programming</h1>
+      <p>
+        In Winter 2015, I worked on a project investigating trigger-action programming interfaces.
+        We worked to characterize the possible confusions people might have in creating and understanding trigger-action rules.
+        I built a trigger-action programming interface and conducted two studies on Mechanical Turk.
+        Our paper, <a href="https://drive.google.com/file/d/0B77PnOCaAq8sUkRuQ01RcGd1Mzg/view?usp=sharing">Supporting Mental Model Accuracy in Trigger-Action Programming</a>, was accepted to Ubicomp 2015. A video of the interface is linked below.
+        <image-thumbnail src="images/huang15ubicomp_thumbnail.png" href="https://drive.google.com/file/d/0B77PnOCaAq8sUkRuQ01RcGd1Mzg/view?usp=sharing"></image-thumbnail>
+        <image-thumbnail src="images/trigger_action_video.png" href="https://www.youtube.com/watch?v=7uFmDQRvrR4"></image-thumbnail>
+      </p>
+    </div>
+
+    <div class="card">
+      <h1>Teleoperation studies</h1>
+      <p>
+        In Autumn 2014, was a co-author on <a href="https://drive.google.com/file/d/0B77PnOCaAq8sN0JaTWNfOE9ZVDg/view?usp=sharing">The Privacy-Utility Tradeoff for Remotely Teleoperated Robots</a>.
+        I helped design privacy-preserving interfaces for teleoperation, run a user study, and analyze data from the study.
+      </p>
+      <p>
+        Prior to this (Spring 2014), I worked on an study for a human-robot interaction class in which I recorded users' interactions with a teleoperation interface, and analyzed the difficulties they had.
+        I wrote a <a href="https://drive.google.com/file/d/0B77PnOCaAq8sZVlGcHdTcGFmaEE/view?usp=sharing">paper</a> about my results.
+        <image-thumbnail src="images/privacy_paper.png" href="https://drive.google.com/file/d/0B77PnOCaAq8sN0JaTWNfOE9ZVDg/view?usp=sharing"></image-thumbnail>
+        <image-thumbnail src="images/privacy_clean.png"></image-thumbnail>
+        <image-thumbnail src="images/privacy_obscured.png"></image-thumbnail>
+        <image-thumbnail src="images/privacy_box.png"></image-thumbnail>
+        <image-thumbnail src="images/observational_paper.png" href="https://drive.google.com/file/d/0B77PnOCaAq8sZVlGcHdTcGFmaEE/view?usp=sharing"></image-thumbnail>
+        <image-thumbnail src="images/observational_video.png" href="https://www.youtube.com/watch?v=DbSYG0KVOOI"></image-thumbnail>
+      </p>
+    </div>
+
+    <div class="card">
+      <h1>Miscellaneous</h1>
+      <p><ul>
+        <li>My <a href="https://github.com/jstnhuang">Github</a>.</li>
+        <li>For a systems class, my partner and I wrote a pure Javascript implementation of MapReduce using WebRTC for peer-to-peer communication and the HTML5 filesystem for storage. It's on Github at <a href="https://github.com/jstnhuang/crowdmr">crowdmr</a>.</li>
+        <li>I integrated several existing systems to make the PR2 have a conversation with you. It's on Github at <a href="https://github.com/jstnhuang/chatbot">chatbot</a>. <a href="https://www.youtube.com/watch?v=3bCR8fC71N8">Video 1</a>, <a href="https://www.youtube.com/watch?v=hCJ-ByIW2fI">Video 2</a>.</li>
+          <li>I put together a system that records audio continuously from the microphone on a Kinect. <a href="https://www.youtube.com/watch?v=e58vZ9VoiBc">Video</a>.</li>
+          <li>In Autumn 2014, I was a TA for the robotics capstone class at UW. <a href="https://sites.google.com/site/cse481au14/teams">Final project videos</a>.
+          <li><a href="https://docs.google.com/document/d/1Heg1kZf6PjLZfoy_eR5Ir5s0-YcDdrr4NUjEAj2PMFc/edit?usp=sharing">How to build a tweenbot</a>. We made a lot of these during my undergrad.</li>
+      </ul></p>
     </div>
   </template>
 
