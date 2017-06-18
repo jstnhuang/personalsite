@@ -1,0 +1,57 @@
+<link rel="import" href="../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../bower_components/iron-image/iron-image.html">
+
+<dom-module id="image-thumbnail">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+      iron-image {
+        border-radius: 3px;
+        float: left;
+        width: 220px;
+        height: 220px;
+        margin-right: 10px;
+        background-color: #fff;
+      }
+      @media(max-width: 494px) {
+        iron-image {
+          width: 120px;
+          height: 120px;
+        }
+      }
+    </style>
+    <a href="[[computeHref(src, href)]]" target="_blank">
+      <iron-image src="{{src}}" sizing="contain" preload fade />
+    </a>
+  </template>
+</dom-module>
+<script>
+  class ImageThumbnail extends Polymer.Element {
+    static get is() { return 'image-thumbnail'; }
+
+    static get properties() {
+      return {
+        src: {
+          type: String,
+          value: '',
+          notify: true
+        },
+        href: {
+          type: String,
+          value: '',
+          notify: true
+        }
+      };
+    }
+
+    computeHref(src, href) {
+      if (href === '') {
+        href = src;
+      }
+      return href;
+    }
+  };
+  window.customElements.define(ImageThumbnail.is, ImageThumbnail);
+</script>
