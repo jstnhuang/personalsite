@@ -21,7 +21,6 @@
         float: left;
         margin-bottom: 14px;
         margin-right: 14px;
-        background-color: #fff;
       }
       h1 {
         margin: 0;
@@ -35,7 +34,7 @@
         width: 24px;
         margin-right: 8px;
       }
-      .links img {
+      .links iron-image {
         height: 24px;
         width: 24px;
         margin-right: 8px;
@@ -46,11 +45,14 @@
       .link {
         margin-top: 10px;
       }
+      iron-image {
+        background-color: #fff;
+      }
     </style>
 
     <div class="card">
       <div class="title">
-        <iron-image src="../images/justin.jpg" sizing="cover" class="portrait" preload fade alt="Profile picture"></iron-image>
+        <iron-image src="images/justin.jpg" sizing="cover" class="portrait" preload fade alt="Profile picture"></iron-image>
         <p>Ph.D.&nbsp;Candidate</p>
         <p>Paul&nbsp;G.&nbsp;Allen School of Computer Science &amp; Engineering</p>
         <p>University&nbsp;of&nbsp;Washington</p>
@@ -65,10 +67,10 @@
       <h1>Links</h1>
       <div class="links">
         <a href="https://github.com/jstnhuang" target="_blank" class="link layout horizontal center">
-          <img src="../images/github.png" />My Github
+          <iron-image sizing="contain" src="images/github.png" preload fade></iron-image>My Github
         </a>
         <a href="https://github.com/hcrlab" target="_blank" class="link layout horizontal center">
-          <img src="../images/github.png" />HCR Lab Github
+          <iron-image sizing="contain" src="images/github.png" preload fade></iron-image>HCR Lab Github
         </a>
         <a href="https://drive.google.com/open?id=0B77PnOCaAq8sZjI1S20tZkZfdFk" target="_blank" class="link layout horizontal center">
           <iron-icon icon="editor:insert-drive-file"></iron-icon>Curriculum Vitae
