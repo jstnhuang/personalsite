@@ -165,6 +165,9 @@
             null,
             this._showPage404.bind(this),
             true);
+        if (this.isNarrow) {
+          this.$.drawer.close();
+        }
       }
 
       _showPage404() {
