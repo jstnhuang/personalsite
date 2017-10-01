@@ -1,0 +1,108 @@
+<link rel="import" href="../bower_components/polymer/polymer-element.html">
+<link rel="import" href="shared-styles.html">
+
+<dom-module id="my-software">
+  <template>
+    <style include="shared-styles">
+      :host {
+        display: block;
+
+        padding: 10px;
+      }
+    </style>
+
+    <div class="card">
+      <h1>Robot programming systems</h1>
+      <p>
+        <strong>rapid_pbd</strong> is a programming by demonstration application for the PR2 and Fetch robots.
+        <ul>
+          <li><a href="https://github.com/jstnhuang/rapid_pbd/wiki">Documentation</a></li>
+          <li><a href="https://github.com/jstnhuang/rapid_pbd">GitHub</a></li>
+        </ul>
+      </p>
+      <p>
+        <strong>code_it</strong> is a web-based programming interface for ROS robots.
+        <ul>
+          <li><a href="https://github.com/hcrlab/code_it">GitHub</a></li>
+          <li><a href="https://github.com/hcrlab/code_it_pr2">PR2 implementation</a></li>
+          <li><a href="https://github.com/hcrlab/code_it_fetch">Fetch implementation</a></li>
+          <li><a href="https://github.com/hcrlab/code_it_turtlebot">Turtlebot implementation</a></li>
+        </ul>
+      </p>
+
+    </div>
+
+    <div class="card">
+      <h1>Web applications</h1>
+      <p>
+        <strong>ros_explorer</strong> is a web-based application for getting information about the ROS graph (i.e., browsing publishers, subscribers, services, messages types, and parameters).
+        <ul>
+          <li><a href="https://wiki.ros.org/ros_explorer">ROS wiki</a></li>
+          <li><a href="https://github.com/jstnhuang/ros_explorer">GitHub</a></li>
+        </ul>
+      </p>
+      <p>
+        <strong>Robot web server</strong> is an ROS application launcher that can be used as a robot website.
+        <ul>
+          <li><a href="https://github.com/hcrlab/rws/wiki">Documentation</a></li>
+          <li><a href="https://github.com/hcrlab/rws">GitHub</a></li>
+        </ul>
+      </p>
+      <p>
+        <strong>Blinky</strong> is robot face, designed for tablets, that can be used to show text and ask for user input.
+        <ul>
+          <li><a href="https://github.com/hcrlab/blinky">GitHub</a></li>
+        </ul>
+      </p>
+    </div>
+
+    <div class="card">
+      <h1>Utilities</h1>
+      <p>
+        <strong>transform_graph</strong> is a C++ ROS library for computing transformations that are connected through arbitrary graph structures.
+        <ul>
+          <li><a href="https://wiki.ros.org/transform_graph">ROS wiki</a></li>
+          <li><a href="https://docs.ros.org/indigo/api/transform_graph/html/">Documentation</a></li>
+          <li><a href="https://github.com/jstnhuang/transform_graph">GitHub</a></li>
+        </ul>
+      </p>
+      <p>
+        <strong>robot_markers</strong> is a C++ ROS library for visualizing URDFs as visualization_msgs/MarkerArray messages.
+        <ul>
+          <li><a href="https://wiki.ros.org/robot_markers">ROS wiki</a></li>
+          <li><a href="https://docs.ros.org/indigo/api/robot_markers/html/">Documentation</a></li>
+          <li><a href="https://github.com/jstnhuang/robot_markers">GitHub</a></li>
+        </ul>
+      </p>
+      <p>
+        <strong>surface_perception</strong> is a simple C++ ROS library for doing tabletop perception.
+        <ul>
+          <li><a href="https://wiki.ros.org/surface_perception">ROS wiki</a></li>
+          <li><a href="https://docs.ros.org/indigo/api/surface_perception/html/">Documentation</a></li>
+          <li><a href="https://github.com/jstnhuang/surface_perception">GitHub</a></li>
+        </ul>
+      </p>
+      <p>
+        <strong>moveit_goal_builder</strong> is a C++ ROS library for constructing MoveGroupAction goals.
+        This allows developers to call the move_group action directly, which is more flexible that using the move_group interface.
+        <ul>
+          <li><a href="https://wiki.ros.org/moveit_goal_builder">ROS wiki</a></li>
+          <li><a href="https://docs.ros.org/indigo/api/moveit_goal_builder/html/">Documentation</a></li>
+          <li><a href="https://github.com/jstnhuang/moveit_goal_builder">GitHub</a></li>
+        </ul>
+      </p>
+    </div>
+    <div class="card">
+      <h1>Research code</h1>
+      <p>Other, unreleased work can be found on my <a href="https://github.com/jstnhuang">GitHub</a> account, especially in the <a href="https://github.com/jstnhuang/rapid">rapid</a> repository.</p>
+    </div>
+  </template>
+
+  <script>
+    class MySoftware extends Polymer.Element {
+      static get is() { return 'my-software'; }
+    }
+
+    window.customElements.define(MySoftware.is, MySoftware);
+  </script>
+</dom-module>
