@@ -12,7 +12,43 @@
     </style>
 
     <div class="card">
-      <h1>Year of Code3</h1>
+      <h1>Rapid PbD</h1>
+      <p>
+        Based on my interactions with non-expert users who tried our lab's programming by demonstration system, I wrote a new programming by demonstration system called <a href="https://github.com/jstnhuang/rapid_pbd">Rapid PbD</a>.
+        Rapid PbD implements a variety of useful features:
+        <ul>
+          <li><strong>Web frontend:</strong> Our previous PbD app required an Ubuntu computer to run a desktop interface. This interface was hard to use because it visualized the entire action using overlapping, transparent markers. Leveraging my previous work on a web-based visualizer for ROS, I created a web interface that allows users to visualize a PbD program one step at a time.</li>
+          <li><strong>Parallel action model:</strong> The new system allows users to specify actions that happen in parallel (e.g., simultaneously moving the head and arms). On dual-arm robots like the PR2, it gives users the option to leave an arm or gripper pose unspecified. The previous system always recorded and played back the poses of both arms, even when the user only intended to move one of them.</li>
+          <li><strong>Multiple robot support:</strong> Rapid PbD was developed for both the PR2 and the Fetch robot, and it could be adapted for more robots.</li>
+          <li><strong>Step-by-step playback:</strong> Users often want to preview each step of their program as they are developing it. Rapid PbD gives them the option of testing out individual perception and manipulation actions without having to execute the entire program at once.</li>
+          <li><strong>Reactive interface:</strong> Changes to a program are immediately propagated to other clients viewing the same program.</li>
+        </ul>
+      </p>
+      <p>
+        Shortly after its development, Rapid PbD was used to teach a week-long programming workshop for a group of high school students with disabilities.
+        The students were able to use their own laptops to access Rapid PbD and CodeIt to program a Fetch robot to do tasks in a mock grocery store setting.
+        Rapid PbD is also being used as the basis for another research project in the lab.
+        Additionally, other lab members have used Rapid PbD in part of their own research studies with the PR2 robot.
+      </p>
+      <image-thumbnail src="images/rapid_pbd_1.jpg" href="https://www.youtube.com/watch?v=Bv10RSzbw8w" title="A video showing Rapid PbD, highlighting the web-based RViz visualization."></image-thumbnail>
+      <image-thumbnail src="images/rapid_pbd_2.jpg" href="https://www.youtube.com/watch?v=KlNBqsMW7iY" title="A video highlighting the reactivity of Rapid PbD across two clients."></image-thumbnail>
+    </div>
+    <div class="card">
+      <h1>Web components and ROSCon</h1>
+      <p>
+        I developed several web components that make it easy to use ROS with other JavaScript programming interfaces.
+        They are published in the <a href="https://www.webcomponents.org/collection/jstnhuang/ros-element-collection">ROS element collection</a> on WebComponents.org.
+        The marquee element of this collection is <a href="https://www.webcomponents.org/element/jstnhuang/ros-rviz">&lt;ros-rviz&gt;</a>, a web-based visualization application similar to the desktop application Rviz.
+      </p>
+      <p>
+        I presented these web components and &lt;ros-rviz&gt; at <a href="https://roscon.ros.org/2017">ROSCon 2017</a> in Vancouver, BC.
+        My slides and a video recording of the talk are on the conference website.
+      </p>
+      <image-thumbnail src="images/roscon2017.png" href="https://drive.google.com/open?id=0B77PnOCaAq8sVlBtNnV0QlV5cXM" title="My slides on web components from ROSCon 2017."></image-thumbnail>
+      <image-thumbnail src="images/ros_rviz.jpg" href="https://www.youtube.com/watch?v=tqXdg5eAw6g" title="A video showing the <ros-rviz> component."></image-thumbnail>
+    </div>
+    <div class="card">
+      <h1>Code3</h1>
       <p>
         2016 was a busy year!
         The highlight of it was building the <em>Code3</em> system, which allows users to easily program mobile manipulators like the PR2.
@@ -32,7 +68,7 @@
         In the spring and summer quarters, I built a 3D object detection system called <em>CustomLandmarks</em>.
         This system allows users to specify a perceptual landmark (an object or a unique part of the scene) that the robot can detect later.
         To do this, they simply draw a box around a point cloud from the robot's RGBD sensor, such as a Kinect.
-        I wrote about the system and characterized its performance in a submission to ICRA 2017 that is currently under review.
+        I wrote about the system and characterized its performance in a paper that was accepted at IROS 2017.
       </p>
       <p>
         <strong>CustomActions and Code3:</strong>
